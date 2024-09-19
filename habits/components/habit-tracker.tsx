@@ -221,7 +221,7 @@ export function HabitTrackerComponent() {
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
-        <div className={`grid gap-1 ${calendarView === 'year' ? 'grid-cols-12' : 'grid-cols-7'}`}>
+        <div className={`grid gap-1 ${calendarView === 'year' ? 'grid-cols-11' : 'grid-cols-7'}`}>
           {calendarView === 'week' && DAYS.map(day => (
             <div key={day} className="text-center text-xs text-gray-500">{day}</div>
           ))}
@@ -240,7 +240,7 @@ export function HabitTrackerComponent() {
                 onClick={() => toggleCheckIn(habit, dateString)}
               >
                 
-                <span className="text-xs">
+                <span className="text-xs text-gray-500">
                   {calendarView === 'year' 
                     ? Math.floor((date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24))
                     : date.getDate()}
