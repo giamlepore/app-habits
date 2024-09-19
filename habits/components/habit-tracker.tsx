@@ -162,7 +162,7 @@ export function HabitTrackerComponent() {
   const renderCalendar = (habit: Habit) => {
     let startDate: Date
     let endDate: Date
-    let dateFormat: Intl.DateTimeFormatOptions
+    // let dateFormat: Intl.DateTimeFormatOptions
 
     switch (calendarView) {
       case 'week':
@@ -170,17 +170,17 @@ export function HabitTrackerComponent() {
         startDate.setDate(currentDate.getDate() - currentDate.getDay() + 1)
         endDate = new Date(startDate)
         endDate.setDate(startDate.getDate() + 6)
-        dateFormat = { weekday: 'short' }
+        // dateFormat = { weekday: 'short' }
         break
       case 'month':
         startDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1)
         endDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0)
-        dateFormat = { day: 'numeric' }
+        // dateFormat = { day: 'numeric' }
         break
       case 'year':
         startDate = new Date(currentDate.getFullYear(), 0, 1)
         endDate = new Date(currentDate.getFullYear(), 11, 31)
-        dateFormat = { day: 'numeric' }
+        // dateFormat = { day: 'numeric' }
         break
     }
 
